@@ -6,6 +6,15 @@
 [functions]
   node_bundler = "esbuild"
 
+[functions."*"]
+  # Externaliza dependências que causam erro no esbuild
+  external_node_modules = [
+    "@tailwindcss/oxide-linux-x64-gnu",
+    "@tailwindcss/oxide-linux-x64-musl",
+    "lightningcss",
+    "@babel/preset-typescript"
+  ]
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/server:path"
