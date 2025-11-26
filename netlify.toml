@@ -1,6 +1,6 @@
 [build]
   command = "pnpm build"
-  functions = "server"
+  functions = "dist"
   publish = "client/dist"
 
 [functions]
