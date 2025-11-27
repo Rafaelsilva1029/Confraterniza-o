@@ -4,7 +4,7 @@ Este é seu tutorial personalizado com as variáveis corretas para configurar no
 
 ---
 
-## 📋 Suas Variáveis de Ambiente
+## 📋 Suas Variáveis de Ambiente (ATUALIZADAS)
 
 Copie e cole **exatamente** estas variáveis no Vercel:
 
@@ -13,7 +13,7 @@ Copie e cole **exatamente** estas variáveis no Vercel:
 ```
 NEXT_PUBLIC_SUPABASE_URL=https://tigumayeglzgsuyrwxys.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRpZ3VtYXllZ2x6Z3N1eXJ3eHlzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQxMjIxODcsImV4cCI6MjA3OTY5ODE4N30.cmcG_iMLsmduK0ri7RxsYP8AYy9LAp_1GhBS6Q_t5Rc
-DATABASE_URL=postgresql://postgres:10294560@db.tigumayeglzgsuyrwxys.supabase.co:5432/postgres
+DATABASE_URL=postgresql://postgres.tigumayeglzgsuyrwxys:10294560%40Yuri@aws-1-us-east-2.pooler.supabase.com:6543/postgres
 ```
 
 ### **Variáveis de Autenticação**
@@ -54,13 +54,13 @@ NODE_ENV=production
 
 Para cada variável abaixo, clique em **"Add New"** e copie/cole:
 
-#### **Grupo 1: Supabase (4 variáveis)**
+#### **Grupo 1: Supabase (3 variáveis)**
 
 | Nome | Valor |
 |------|-------|
 | `NEXT_PUBLIC_SUPABASE_URL` | `https://tigumayeglzgsuyrwxys.supabase.co` |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRpZ3VtYXllZ2x6Z3N1eXJ3eHlzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQxMjIxODcsImV4cCI6MjA3OTY5ODE4N30.cmcG_iMLsmduK0ri7RxsYP8AYy9LAp_1GhBS6Q_t5Rc` |
-| `DATABASE_URL` | `postgresql://postgres:10294560@db.tigumayeglzgsuyrwxys.supabase.co:5432/postgres` |
+| `DATABASE_URL` | `postgresql://postgres.tigumayeglzgsuyrwxys:10294560%40Yuri@aws-1-us-east-2.pooler.supabase.com:6543/postgres` |
 
 #### **Grupo 2: Autenticação (1 variável)**
 
