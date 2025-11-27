@@ -7,14 +7,14 @@
       "runtime": "nodejs18.x"
     }
   },
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "/server/_core/index.ts"
+      "src": "/api/(.*)",
+      "dest": "/server/_core/index.ts"
     },
     {
-      "source": "/(.*)",
-      "destination": "/server/_core/index.ts"
+      "src": "/(.*)",
+      "dest": "/dist/public/$1"
     }
   ]
 }
