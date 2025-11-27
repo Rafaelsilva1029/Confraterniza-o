@@ -6,7 +6,25 @@
   "outputDirectory": "dist",
   "env": {
     "DATABASE_URL": {
-      "description": "URL de conexão do banco de dados Supabase (PostgreSQL)"
+      "description": "URL de conexão do banco de dados Supabase (PostgreSQL com pooler)"
+    },
+    "NEXT_PUBLIC_SUPABASE_URL": {
+      "description": "URL do Supabase"
+    },
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": {
+      "description": "Chave anônima do Supabase (pública)"
+    },
+    "SUPABASE_URL": {
+      "description": "URL do Supabase (backend)"
+    },
+    "SUPABASE_ANON_KEY": {
+      "description": "Chave anônima do Supabase (backend)"
+    },
+    "SUPABASE_SERVICE_ROLE_KEY": {
+      "description": "Chave de serviço do Supabase (privada)"
+    },
+    "SUPABASE_JWT_SECRET": {
+      "description": "Chave secreta JWT do Supabase"
     },
     "NODE_ENV": {
       "description": "Ambiente de execução"
