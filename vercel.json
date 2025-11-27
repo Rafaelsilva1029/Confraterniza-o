@@ -8,29 +8,8 @@
     "DATABASE_URL": {
       "description": "URL de conexão do banco de dados Supabase (PostgreSQL)"
     },
-    "JWT_SECRET": {
-      "description": "Chave secreta para assinar tokens JWT de sessão"
-    },
-    "NEXT_PUBLIC_SUPABASE_URL": {
-      "description": "URL do Supabase"
-    },
-    "NEXT_PUBLIC_SUPABASE_ANON_KEY": {
-      "description": "Chave anônima do Supabase"
-    },
-    "OAUTH_SERVER_URL": {
-      "description": "URL do servidor OAuth Manus"
-    },
-    "VITE_OAUTH_PORTAL_URL": {
-      "description": "URL do portal OAuth Manus para login"
-    },
-    "OWNER_NAME": {
-      "description": "Nome do proprietário da aplicação"
-    },
-    "OWNER_OPEN_ID": {
-      "description": "ID aberto do proprietário"
-    },
-    "BUILT_IN_FORGE_API_KEY": {
-      "description": "Chave de API Forge interna do Manus"
+    "NODE_ENV": {
+      "description": "Ambiente de execução"
     }
   }
 }
