@@ -1,7 +1,6 @@
 import "dotenv/config";
 import express from "express";
 import { createServer } from "http";
-import net from "net";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { registerOAuthRoutes } from "./oauth";
 import { appRouter } from "../routers";
@@ -27,18 +26,18 @@ app.use(
 );
 
 // development mode uses Vite, production mode uses static files
-if (process.env.NODE_ENV === "development") {
-  const server = createServer(app);
-  setupVite(app, server).then(() => {
-    const preferredPort = parseInt(process.env.PORT || "3000");
-    const port = preferredPort; // Simplificado para o ambiente de desenvolvimento
-    server.listen(port, () => {
-      console.log(`Server running on http://localhost:${port}/`);
+  if (process.env.NODE_ENV === "development") {
+    const server = createServer(app);
+    setupVite(app).then(() => {
+      const preferredPort = parseInt(process.env.PORT || "3000");
+      const port = preferredPort; // Simplificado para o ambiente de desenvolvimento
+      server.listen(port, () => {
+        console.log(`Server running on http://localhost:${port}/`);
+      });
     });
-  });
-} else {
-  serveStatic(app);
-}
+  } else {
+    serveStatic(app);
+  }
 
 // Exporta o app para ser usado pela Vercel como Serverless Function
 export default app;
