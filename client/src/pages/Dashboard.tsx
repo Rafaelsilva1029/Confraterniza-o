@@ -6,7 +6,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from 'sonner';
-import { Trash2, Edit2, Plus, Download } from 'lucide-react';
+import { Trash2, Edit2, Plus, Download, FileText } from 'lucide-react';
+import { generateReportPdf, exportToCsv } from '@/lib/pdfGenerator';
 
 // Tipos
 interface Funcionario {
@@ -207,6 +208,40 @@ export default function Dashboard() {
     toast.info('Pré-visualização gerada. Clique com botão direito para salvar ou compartilhar.');
   };
 
+  const handleExportPdf = () => {
+    try {
+      generateReportPdf({
+        title: 'Relatório de Arrecadação - Confraternização Liderança BP',
+        employees: funcionarios,
+        totalCollected,
+        totalPendingValue,
+        totalExpenses,
+        balance,
+      });
+      toast.success('PDF exportado com sucesso!');
+    } catch (error) {
+      toast.error('Erro ao exportar PDF');
+      console.error(error);
+    }
+  };
+
+  const handleExportCsv = () => {
+    try {
+      exportToCsv({
+        title: 'Relatório de Arrecadação - Confraternização Liderança BP',
+        employees: funcionarios,
+        totalCollected,
+        totalPendingValue,
+        totalExpenses,
+        balance,
+      });
+      toast.success('CSV exportado com sucesso!');
+    } catch (error) {
+      toast.error('Erro ao exportar CSV');
+      console.error(error);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header com Logo */}
@@ -374,6 +409,22 @@ export default function Dashboard() {
                 >
                   <Download className="w-4 h-4 mr-2" />
                   Exportar (WhatsApp)
+                </Button>
+
+                <Button
+                  onClick={handleExportPdf}
+                  className="w-full sm:w-auto bg-blue-500 hover:bg-blue-600"
+                >
+                  <FileText className="w-4 h-4 mr-2" />
+                  Exportar PDF
+                </Button>
+
+                <Button
+                  onClick={handleExportCsv}
+                  className="w-full sm:w-auto bg-purple-500 hover:bg-purple-600"
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  Exportar CSV
                 </Button>
 
                 <Button
