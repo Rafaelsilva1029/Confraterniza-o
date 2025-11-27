@@ -24,7 +24,7 @@ O projeto já utilizava o Supabase como banco de dados (PostgreSQL) através do 
 
 5.  **Correção de Avisos de Build da Vercel:**
     *   A variável de ambiente `NODE_ENV` foi removida dos arquivos `.env` e `.env.example`, pois a Vercel define o ambiente de execução automaticamente.
-    *   As referências às variáveis `%VITE_ANALYTICS_ENDPOINT%` e `%VITE_ANALYTICS_WEBSITE_ID%` foram investigadas e, como não estavam presentes no código do cliente (`client/index.html`), o aviso foi resolvido pela remoção do plugin `vite-plugin-manus-runtime` e pela limpeza do `vite.config.ts`.
+    *   O aviso sobre as variáveis de ambiente de análise (`VITE_ANALYTICS_*`) foi resolvido com a remoção do `vite-plugin-manus-runtime` e a limpeza da configuração do Vite.
 
 ## Próximos Passos para o Usuário
 

@@ -41,8 +41,8 @@ BUILT_IN_FORGE_API_URL
 BUILT_IN_FORGE_API_KEY
 VITE_FRONTEND_FORGE_API_URL
 VITE_FRONTEND_FORGE_API_KEY
-VITE_ANALYTICS_ENDPOINT
-VITE_ANALYTICS_WEBSITE_ID
+
+
 VITE_APP_TITLE
 VITE_APP_LOGO
 ```
@@ -127,8 +127,8 @@ BUILT_IN_FORGE_API_URL = https://api.manus.im
 BUILT_IN_FORGE_API_KEY = sua-chave-api-forge
 VITE_FRONTEND_FORGE_API_URL = https://api.manus.im
 VITE_FRONTEND_FORGE_API_KEY = sua-chave-api-forge-frontend
-VITE_ANALYTICS_ENDPOINT = https://analytics.manus.im
-VITE_ANALYTICS_WEBSITE_ID = seu-website-id
+
+
 VITE_APP_TITLE = Aplicativo de Confraternização
 VITE_APP_LOGO = https://seu-dominio.com/logo.png
 NODE_ENV = production

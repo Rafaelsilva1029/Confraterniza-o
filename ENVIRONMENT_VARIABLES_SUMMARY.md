@@ -48,8 +48,8 @@ Estas variáveis são **automaticamente gerenciadas** pelo Manus. Você **NÃO**
 ✅ BUILT_IN_FORGE_API_KEY
 ✅ VITE_FRONTEND_FORGE_API_URL
 ✅ VITE_FRONTEND_FORGE_API_KEY
-✅ VITE_ANALYTICS_ENDPOINT
-✅ VITE_ANALYTICS_WEBSITE_ID
+
+
 ✅ VITE_APP_TITLE
 ✅ VITE_APP_LOGO
 ```
