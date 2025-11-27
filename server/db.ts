@@ -90,3 +90,55 @@ export async function getUserByOpenId(openId: string) {
 }
 
 // TODO: add feature queries here as your schema grows.
+
+// Queries de Funcionários
+import { funcionarios, despesas } from "../drizzle/schema";
+
+export async function getFuncionarios() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(funcionarios);
+}
+
+export async function createFuncionario(data: { nome: string; valor_contribuicao: number; status: 'Pago' | 'Pendente' | 'Aguardando Alvará' }) {
+  const db = await getDb();
+  if (!db) throw new Error('Database not available');
+  return db.insert(funcionarios).values(data);
+}
+
+export async function updateFuncionario(id: number, data: Partial<{ nome: string; valor_contribuicao: number; status: 'Pago' | 'Pendente' | 'Aguardando Alvará' }>) {
+  const db = await getDb();
+  if (!db) throw new Error('Database not available');
+  return db.update(funcionarios).set(data).where(eq(funcionarios.id, id));
+}
+
+export async function deleteFuncionario(id: number) {
+  const db = await getDb();
+  if (!db) throw new Error('Database not available');
+  return db.delete(funcionarios).where(eq(funcionarios.id, id));
+}
+
+// Queries de Despesas
+export async function getDespesas() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(despesas);
+}
+
+export async function createDespesa(data: { item: string; valor: number; data_compra: string }) {
+  const db = await getDb();
+  if (!db) throw new Error('Database not available');
+  return db.insert(despesas).values(data);
+}
+
+export async function updateDespesa(id: number, data: Partial<{ item: string; valor: number; data_compra: string }>) {
+  const db = await getDb();
+  if (!db) throw new Error('Database not available');
+  return db.update(despesas).set(data).where(eq(despesas.id, id));
+}
+
+export async function deleteDespesa(id: number) {
+  const db = await getDb();
+  if (!db) throw new Error('Database not available');
+  return db.delete(despesas).where(eq(despesas.id, id));
+}
