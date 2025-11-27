@@ -1,21 +1,21 @@
 import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Loader2, LogOut, LogIn } from "lucide-react";
+import { Loader2, LogIn } from "lucide-react";
 import { getLoginUrl } from "@/const";
-import { useNavigate } from "wouter";
+import { useLocation } from "wouter";
 import { useEffect } from "react";
 
 export default function Home() {
   const { user, loading, isAuthenticated, logout } = useAuth();
-  const [, navigate] = useNavigate();
+  const [location, setLocation] = useLocation();
 
   // Redirecionar para Dashboard se autenticado
   useEffect(() => {
     if (isAuthenticated && !loading) {
-      navigate("/dashboard");
+      setLocation("/dashboard");
     }
-  }, [isAuthenticated, loading, navigate]);
+  }, [isAuthenticated, loading, setLocation]);
 
   if (loading) {
     return (
